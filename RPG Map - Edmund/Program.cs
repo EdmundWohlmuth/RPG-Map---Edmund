@@ -10,10 +10,8 @@ namespace RPG_Map___Edmund
     {
         static void Main(string[] args)
         {
-            static void Main(string[] args)
-            {
-                char[,] map1 = new char[8, 8]
-                {
+            char[,] map1 = new char[8, 8]
+                 {
                 {'a','a','a','a','a','a','a','a' },
                 {'a','a','a','a','a','a','a','a' },
                 {'a','a','a','a','a','a','a','a' },
@@ -22,11 +20,10 @@ namespace RPG_Map___Edmund
                 {'a','a','a','a','a','a','a','a' },
                 {'a','a','a','a','a','a','a','a' },
                 {'a','a','a','a','a','a','a','a' },
-                };
+                 };
 
-                Console.Write(map1);
-                Console.ReadKey(true);
-            }
+            Console.Write(map1);
+            Console.ReadKey(true);
         }
     }
 }
