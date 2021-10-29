@@ -10,6 +10,13 @@ namespace RPG_Map___Edmund
     {
         static void Main(string[] args)
         {
+            DisplayMap();
+
+            Console.ReadKey(true);
+        }
+
+        static void DisplayMap()
+        {
             char[,] map1 = new char[8, 8]
                  {
                 {'a','a','a','a','a','a','a','a' },
@@ -22,8 +29,21 @@ namespace RPG_Map___Edmund
                 {'a','a','a','a','a','a','a','a' },
                  };
 
-            Console.Write(map1);
-            Console.ReadKey(true);
+            for ( char x = ' '; x <= 7; x++)
+            {
+                for ( char y = ' '; y <= 7; y++)
+                {
+                    map1[x, y] = ' ';
+
+                    Console.WriteLine(+ x + "," + y);
+                }
+            }
+
+        }
+
+        void DisplayMap(int scale)
+        {
+
         }
     }
 }
