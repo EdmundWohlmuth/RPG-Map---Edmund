@@ -8,7 +8,6 @@ namespace RPG_Map___Edmund
 {
     class Program
     {
-
         static char[,] map1 = new char[,]
                  {
         {'^','^','^','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\''},
@@ -25,31 +24,48 @@ namespace RPG_Map___Edmund
         {'\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'','\'',},
                  };
 
+
+        static int rows = map1.GetLength(0);
+        static int columns = map1.GetLength(1);
+        static int scale = 2;
+
         static void Main(string[] args)
         {
             DisplayMap();
+            Console.WriteLine(" ");
+            DisplayMap(scale);
 
             Console.ReadKey(true);
         }
 
         static void DisplayMap()
         {
-            
-
-            for ( int x = 0; x <= 11; x++)
+            for (int x = 0; x <= rows - 1; x++)
             {
-                for ( int y = 0; y <= 29; y++)
+                for (int y = 0; y <= columns - 1; y++)
                 {
                     Console.Write(map1[x, y]);
                 }
                 Console.WriteLine();
             }
-
         }
 
-        void DisplayMap(int scale)
+        static void DisplayMap(int scale)
         {
-            
+            for (int x = 0; x <= rows - 1; x++)
+            {
+                for (int j = 0; j < scale; j++)
+                {
+                    for (int y = 0; y <= columns - 1; y++)
+                    {
+                        for (int i = 0; i < scale; i++)
+                        {
+                            Console.Write(map1[x, y]);
+                        }
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
