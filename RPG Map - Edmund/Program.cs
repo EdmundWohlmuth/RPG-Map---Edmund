@@ -58,14 +58,20 @@ namespace RPG_Map___Edmund
                 {
                     for (int y = 0; y <= columns - 1; y++)
                     {
+                        if (y == 0)
+                        {
+                            Console.Write("|");
+                        }
                         for (int i = 0; i < scale; i++)
                         {
                             Console.Write(map1[x, y]);
                         }
                     }
+                    Console.Write("|");
                     Console.WriteLine();
                 }
             }
         }
+
     }
 }
