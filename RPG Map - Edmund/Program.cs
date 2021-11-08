@@ -57,6 +57,7 @@ namespace RPG_Map___Edmund
 
         static void DisplayMap(int scale)
         {
+            //top Border
             Console.Write("+");
             for (int i = 0; i <= columns * scale - 1; i++)
             {
@@ -65,6 +66,7 @@ namespace RPG_Map___Edmund
             Console.Write("+");
             Console.WriteLine("");
 
+            //map
             for (int x = 0; x <= rows - 1; x++)
             {
                 for (int j = 0; j < scale; j++)
@@ -84,6 +86,14 @@ namespace RPG_Map___Edmund
                     Console.WriteLine();
                 }
             }
+
+            // bottom border
+            Console.Write("+");
+            for (int i = 0; i <= columns * scale - 1; i++)
+            {
+                Console.Write("-");
+            }
+            Console.Write("+");
         }
 
     }
