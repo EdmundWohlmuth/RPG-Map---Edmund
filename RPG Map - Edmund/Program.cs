@@ -44,14 +44,27 @@ namespace RPG_Map___Edmund
             {
                 for (int y = 0; y <= columns - 1; y++)
                 {
-                    Console.Write(map1[x, y]);
+                    if (y == 0)
+                    {
+                        Console.Write("|");
+                    }
+                    Console.Write(map1[x, y]);                    
                 }
+                Console.Write("|");
                 Console.WriteLine();
             }
         }
 
         static void DisplayMap(int scale)
         {
+            Console.Write("+");
+            for (int i = 0; i <= columns * scale - 1; i++)
+            {
+                Console.Write("-");
+            }
+            Console.Write("+");
+            Console.WriteLine("");
+
             for (int x = 0; x <= rows - 1; x++)
             {
                 for (int j = 0; j < scale; j++)
