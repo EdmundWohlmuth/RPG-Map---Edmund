@@ -40,30 +40,51 @@ namespace RPG_Map___Edmund
 
         static void DisplayMap()
         {
+            //top border
+            Console.Write("┌");
+            for (int i = 0; i <= columns - 1; i++)
+            {
+                Console.Write("─");
+            }
+            Console.Write("┐");
+            Console.WriteLine("");
+
+            //map
             for (int x = 0; x <= rows - 1; x++)
             {
                 for (int y = 0; y <= columns - 1; y++)
                 {
                     if (y == 0)
                     {
-                        Console.Write("|");
+                        Console.Write("│");
                     }
                     Console.Write(map1[x, y]);                    
                 }
-                Console.Write("|");
+                Console.Write("│");
                 Console.WriteLine();
             }
+
+            //bottom border
+            Console.Write("└");
+            for (int i = 0; i <= columns - 1; i++)
+            {
+                Console.Write("─");
+            }
+            Console.Write("┘");
+            Console.WriteLine("");
+
+            DisplayColour();
         }
 
         static void DisplayMap(int scale)
         {
             //top Border
-            Console.Write("+");
+            Console.Write("┌");
             for (int i = 0; i <= columns * scale - 1; i++)
             {
-                Console.Write("-");
+                Console.Write("─");
             }
-            Console.Write("+");
+            Console.Write("┐");
             Console.WriteLine("");
 
             //map
@@ -75,25 +96,31 @@ namespace RPG_Map___Edmund
                     {
                         if (y == 0)
                         {
-                            Console.Write("|");
+                            Console.Write("│");
                         }
                         for (int i = 0; i < scale; i++)
                         {
                             Console.Write(map1[x, y]);
                         }
                     }
-                    Console.Write("|");
+                    Console.Write("│");
                     Console.WriteLine();
                 }
+                DisplayColour();
             }
 
             // bottom border
-            Console.Write("+");
+            Console.Write("└");
             for (int i = 0; i <= columns * scale - 1; i++)
             {
-                Console.Write("-");
+                Console.Write("─");
             }
-            Console.Write("+");
+            Console.Write("┘");
+        }
+
+        static void DisplayColour()
+        {
+          
         }
 
     }
