@@ -27,19 +27,20 @@ namespace RPG_Map___Edmund
 
         static int rows = map1.GetLength(0);
         static int columns = map1.GetLength(1);
-        static int scale = 2;
 
         static void Main(string[] args)
         {
+
             DisplayMap();
             Console.WriteLine(" ");
-            DisplayMap(scale);
+            DisplayMap(2);
 
             Console.ReadKey(true);
         }
 
         static void DisplayMap()
         {
+
             //top border
             Console.Write("┌");
             for (int i = 0; i <= columns - 1; i++)
@@ -71,18 +72,17 @@ namespace RPG_Map___Edmund
                 Console.Write("─");
             }
             Console.Write("┘");
-            Console.WriteLine("");
-
-            DisplayColour();
+            Console.WriteLine("");        
         }
 
         static void DisplayMap(int scale)
         {
+
             //top Border
-            Console.Write("┌");
+            Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("┌");
             for (int i = 0; i <= columns * scale - 1; i++)
             {
-                Console.Write("─");
+                Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("─");
             }
             Console.Write("┐");
             Console.WriteLine("");
@@ -94,34 +94,50 @@ namespace RPG_Map___Edmund
                 {
                     for (int y = 0; y <= columns - 1; y++)
                     {
+                        DisplayColour(x, y);
                         if (y == 0)
                         {
-                            Console.Write("│");
+                            Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("│");
                         }
+                        DisplayColour(x, y);
                         for (int i = 0; i < scale; i++)
-                        {
-                            Console.Write(map1[x, y]);
+                        {                           
+                            Console.Write(map1[x, y]);                            
                         }
                     }
-                    Console.Write("│");
+                    Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("│");
                     Console.WriteLine();
-                }
-                DisplayColour();
+                }               
             }
+            
 
             // bottom border
             Console.Write("└");
             for (int i = 0; i <= columns * scale - 1; i++)
             {
-                Console.Write("─");
+                Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("─");
             }
             Console.Write("┘");
         }
 
-        static void DisplayColour()
+        static void DisplayColour(int x, int y)
         {
-          
+            if (map1[x, y] == '\'')
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+            }
+            else if (map1[x, y] == '*')
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+            }
+            else if (map1[x, y] == '~')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            else if (map1[x, y] == '^')
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+            }
         }
-
     }
 }
